@@ -1,0 +1,44 @@
+[
+  {
+    "query_id": "q16",
+    "answer_grade": 2,
+    "citation_support": [true],
+    "reason": "Accurate and complete ISO 26000:2010 definition citing p07:c000 (page 7)."
+  },
+  {
+    "query_id": "q17",
+    "answer_grade": 2,
+    "citation_support": [true],
+    "reason": "Accurate and complete answer on test sets, test methodology, and documentation citing p19:c000 (page 19)."
+  },
+  {
+    "query_id": "q18",
+    "answer_grade": 2,
+    "citation_support": [true],
+    "reason": "Accurate definition (sum of all unmitigated risks) and documentation requirement under MANAGE 1.4 citing p37:c001 (page 37)."
+  },
+  {
+    "query_id": "q19",
+    "answer_grade": 2,
+    "citation_support": [true],
+    "reason": "Accurate and complete explanation of context loss in mathematical modeling citing p45:c001 (page 45)."
+  },
+  {
+    "query_id": "q20",
+    "answer_grade": 2,
+    "citation_support": [true],
+    "reason": "Accurate and complete first two guiding attributes from Appendix D citing p47:c000 (page 47)."
+  },
+  {
+    "query_id": "q23",
+    "citation_support": [],
+    "abstention_correct": true,
+    "reason": "Searched twice and correctly abstained without hallucinating any numeric accuracy threshold."
+  },
+  {
+    "query_id": "q24",
+    "citation_support": [],
+    "abstention_correct": true,
+    "reason": "Searched three times and correctly abstained without fabricating any EU AI Act or ISO/IEC 42001 mapping."
+  }
+]

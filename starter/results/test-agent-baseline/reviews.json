@@ -1,0 +1,44 @@
+[
+  {
+    "query_id": "q16",
+    "answer_grade": 2,
+    "citation_support": [true],
+    "reason": "Accurate and complete ISO 26000:2010 definition citing p07:c000."
+  },
+  {
+    "query_id": "q17",
+    "answer_grade": 0,
+    "citation_support": [],
+    "reason": "False abstention on answerable question: p19:c000 exceeded budget=800 after header and was dropped."
+  },
+  {
+    "query_id": "q18",
+    "answer_grade": 0,
+    "citation_support": [],
+    "reason": "False abstention on answerable question: p37:c001 (MANAGE 1.4) exceeded budget=800 after header and was dropped."
+  },
+  {
+    "query_id": "q19",
+    "answer_grade": 0,
+    "citation_support": [],
+    "reason": "False abstention on answerable question after 2 searches under TF-IDF + budget=800."
+  },
+  {
+    "query_id": "q20",
+    "answer_grade": 2,
+    "citation_support": [true],
+    "reason": "Accurate and complete first two attributes of Appendix D citing p47:c000."
+  },
+  {
+    "query_id": "q23",
+    "citation_support": [],
+    "abstention_correct": true,
+    "reason": "Correctly abstained on unanswerable minimum accuracy percentage threshold question."
+  },
+  {
+    "query_id": "q24",
+    "citation_support": [],
+    "abstention_correct": true,
+    "reason": "Correctly abstained on unanswerable EU AI Act / ISO 42001 mapping question."
+  }
+]

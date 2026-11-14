@@ -1,0 +1,396 @@
+[
+  {
+    "query_id": "q16",
+    "split": "test",
+    "question": "In the Executive Summary, how does ISO 26000:2010 define social responsibility?",
+    "strategy": "test-bm25",
+    "top_k": 3,
+    "budget_chars": 800,
+    "filter_applied": {
+      "section": "executive_summary"
+    },
+    "gold": [
+      {
+        "source_id": "nist-ai-100-1",
+        "page": 7,
+        "evidence": "Social responsibility can refer to the organization’s responsibility “for the impacts of its decisions and activities on society and the environment through transparent and ethical behavior” ( ISO 26000:2010)."
+      }
+    ],
+    "results": [
+      {
+        "id": "nist-ai-100-1:C:p07:c000",
+        "source_id": "nist-ai-100-1",
+        "source": "starter/data/NIST.AI.100-1.pdf",
+        "page": 7,
+        "text": "NIST AI 100-1 AI RMF 1.0 Social responsibility can refer to the organization’s responsibility “for the impacts of its decisions and activities on society and the environment through transparent and ethical behavior” ( ISO 26000:2010). Sustainability refers to the “state of the global system, including environmental, social, and economic aspects, in which the needs of the present are met without compromising the ability of future generations to meet their own needs” ( ISO /IEC TR 24368:2022). Responsible AI is meant to result in technology that is also equitable and accountable.",
+        "metadata": {
+          "year": 2023,
+          "section": "executive_summary",
+          "language": "en",
+          "chunk_index": 0,
+          "document_type": "framework"
+        },
+        "score": 21.888494,
+        "strategy": "bm25",
+        "hit": true
+      },
+      {
+        "id": "nist-ai-100-1:C:p07:c001",
+        "source_id": "nist-ai-100-1",
+        "source": "starter/data/NIST.AI.100-1.pdf",
+        "page": 7,
+        "text": "The expectation is that organizational practices are carried out in accord with “professional responsibility,” defined by ISO as an approach that “aims to ensure that professionals who design, develop, or deploy AI systems and applications or AI-based products or systems, recognize their unique position to exert influence on people, society, and the future of AI” (ISO /IEC TR 24368:2022).",
+        "metadata": {
+          "year": 2023,
+          "section": "executive_summary",
+          "language": "en",
+          "chunk_index": 1,
+          "document_type": "framework"
+        },
+        "score": 7.965846,
+        "strategy": "bm25",
+        "hit": false
+      },
+      {
+        "id": "nist-ai-100-1:C:p06:c000",
+        "source_id": "nist-ai-100-1",
+        "source": "starter/data/NIST.AI.100-1.pdf",
+        "page": 6,
+        "text": "NIST AI 100-1 AI RMF 1.0 Executive Summary Artificial intelligence (AI) technologies have significant potential to transform society and people’s lives – from commerce and health to transportation and cybersecurity to the environment and our planet. AI technologies can drive inclusive economic growth and support scientific advancements that improve the conditions of our world. AI technologies, however, also pose risks that can negatively impact individuals, groups, organizations, communities, society, the environment, and the planet. Like risks for other types of technology, AI risks can emerge in a variety of ways and can be characterized as longor short-term, highor low-probability, systemic or localized, and highor low-impact.",
+        "metadata": {
+          "year": 2023,
+          "section": "executive_summary",
+          "language": "en",
+          "chunk_index": 0,
+          "document_type": "framework"
+        },
+        "score": 7.92095,
+        "strategy": "bm25",
+        "hit": false
+      }
+    ],
+    "context": "[nist-ai-100-1:C:p07:c000 | starter/data/NIST.AI.100-1.pdf | page 7]\nNIST AI 100-1 AI RMF 1.0 Social responsibility can refer to the organization’s responsibility “for the impacts of its decisions and activities on society and the environment through transparent and ethical behavior” ( ISO 26000:2010). Sustainability refers to the “state of the global system, including environmental, social, and economic aspects, in which the needs of the present are met without compromising the ability of future generations to meet their own needs” ( ISO /IEC TR 24368:2022). Responsible AI is meant to result in technology that is also equitable and accountable.",
+    "context_ids": [
+      "nist-ai-100-1:C:p07:c000"
+    ],
+    "context_chars": 653,
+    "elapsed_ms": 0.5177999992156401,
+    "hit1": true,
+    "hit3": true,
+    "context_hit": true
+  },
+  {
+    "query_id": "q17",
+    "split": "test",
+    "question": "What must always accompany accuracy measurements for AI systems?",
+    "strategy": "test-bm25",
+    "top_k": 3,
+    "budget_chars": 800,
+    "filter_applied": null,
+    "gold": [
+      {
+        "source_id": "nist-ai-100-1",
+        "page": 19,
+        "evidence": "Accuracy measurements should always be paired with clearly defined and realistic test sets – that are representative of conditions of expected use – and details about test methodology; these should be included in associated documentation."
+      }
+    ],
+    "results": [
+      {
+        "id": "nist-ai-100-1:C:p19:c000",
+        "source_id": "nist-ai-100-1",
+        "source": "starter/data/NIST.AI.100-1.pdf",
+        "page": 19,
+        "text": "NIST AI 100-1 AI RMF 1.0 Accuracy and robustness contribute to the validity and trustworthiness of AI systems, and can be in tension with one another in AI systems. Accuracy is defined by ISO /IEC TS 5723:2022 as “closeness of results of observations, computations, or estimates to the true values or the values accepted as being true.” Measures of accuracy should consider computational-centric measures (e.g., false positive and false negative rates), human-AI teaming, and demonstrate external validity (generalizable beyond the training conditions). Accuracy measurements should always be paired with clearly defined and realistic test sets – that are representative of conditions of expected use – and details about test methodology; these should be included in associated documentation.",
+        "metadata": {
+          "year": 2023,
+          "section": "part1_foundational",
+          "language": "en",
+          "chunk_index": 0,
+          "document_type": "framework"
+        },
+        "score": 12.394914,
+        "strategy": "bm25",
+        "hit": true
+      },
+      {
+        "id": "nist-ai-100-1:C:p19:c001",
+        "source_id": "nist-ai-100-1",
+        "source": "starter/data/NIST.AI.100-1.pdf",
+        "page": 19,
+        "text": "Accuracy measurements may include disaggregation of results for different data segments. Robustness or generalizability is defined as the “ability of a system to maintain its level of performance under a variety of circumstances” (Source: ISO /IEC TS 5723:2022). Robustness is a goal for appropriate system functionality in a broad set of conditions and circumstances, including uses of AI systems not initially anticipated. Robustness requires not only that the system perform exactly as it does under expected uses, but also that it should perform in ways that minimize potential harms to people if it is operating in an unexpected setting.",
+        "metadata": {
+          "year": 2023,
+          "section": "part1_foundational",
+          "language": "en",
+          "chunk_index": 1,
+          "document_type": "framework"
+        },
+        "score": 7.224444,
+        "strategy": "bm25",
+        "hit": false
+      },
+      {
+        "id": "nist-ai-100-1:C:p17:c004",
+        "source_id": "nist-ai-100-1",
+        "source": "starter/data/NIST.AI.100-1.pdf",
+        "page": 17,
+        "text": "When managing AI risks, organizations can face difficult decisions in balancing these characteristics. For example, in certain scenarios tradeoffs may emerge between optimizing for interpretability and achieving privacy. In other cases, organizations might face a tradeoff between predictive accuracy and interpretability. Or, under certain conditions such as data sparsity, privacy-enhancing techniques can result in a loss in accuracy, affecting decisions Page 12",
+        "metadata": {
+          "year": 2023,
+          "section": "part1_foundational",
+          "language": "en",
+          "chunk_index": 4,
+          "document_type": "framework"
+        },
+        "score": 5.161034,
+        "strategy": "bm25",
+        "hit": false
+      }
+    ],
+    "context": "[nist-ai-100-1:C:p19:c001 | starter/data/NIST.AI.100-1.pdf | page 19]\nAccuracy measurements may include disaggregation of results for different data segments. Robustness or generalizability is defined as the “ability of a system to maintain its level of performance under a variety of circumstances” (Source: ISO /IEC TS 5723:2022). Robustness is a goal for appropriate system functionality in a broad set of conditions and circumstances, including uses of AI systems not initially anticipated. Robustness requires not only that the system perform exactly as it does under expected uses, but also that it should perform in ways that minimize potential harms to people if it is operating in an unexpected setting.",
+    "context_ids": [
+      "nist-ai-100-1:C:p19:c001"
+    ],
+    "context_chars": 712,
+    "elapsed_ms": 1.0719000001699897,
+    "hit1": true,
+    "hit3": true,
+    "context_hit": false
+  },
+  {
+    "query_id": "q18",
+    "split": "test",
+    "question": "How is negative residual risk defined in MANAGE 1.4?",
+    "strategy": "test-bm25",
+    "top_k": 3,
+    "budget_chars": 800,
+    "filter_applied": null,
+    "gold": [
+      {
+        "source_id": "nist-ai-100-1",
+        "page": 37,
+        "evidence": "MANAGE 1.4: Negative residual risks (defined as the sum of all unmitigated risks) to both downstream acquirers of AI systems and end users are documented."
+      }
+    ],
+    "results": [
+      {
+        "id": "nist-ai-100-1:C:p37:c001",
+        "source_id": "nist-ai-100-1",
+        "source": "starter/data/NIST.AI.100-1.pdf",
+        "page": 37,
+        "text": "MANAGE 1.3: Responses to the AI risks deemed high priority, as identified by the MAP function, are developed, planned, and documented. Risk response options can include mitigating, transferring, avoiding, or accepting. MANAGE 1.4: Negative residual risks (defined as the sum of all unmitigated risks) to both downstream acquirers of AI systems and end users are documented. MANAGE 2: Strategies to maximize AI benefits and minimize negative impacts are planned, prepared, implemented, documented, and informed by input from relevant AI actors. MANAGE 2.1: Resources required to manage AI risks are taken into account – along with viable non-AI alternative systems, approaches, or methods – to reduce the magnitude or likelihood of potential impacts.",
+        "metadata": {
+          "year": 2023,
+          "section": "part2_core_profiles",
+          "language": "en",
+          "chunk_index": 1,
+          "document_type": "framework"
+        },
+        "score": 14.750286,
+        "strategy": "bm25",
+        "hit": true
+      },
+      {
+        "id": "nist-ai-100-1:C:p13:c002",
+        "source_id": "nist-ai-100-1",
+        "source": "starter/data/NIST.AI.100-1.pdf",
+        "page": 13,
+        "text": "Nonetheless, regularly assessing and prioritizing risk based on context remains important because non-human-facing AI systems can have downstream safety or social implications. Residual risk – defined as risk remaining after risk treatment (Source: ISO GUIDE 73) – directly impacts end users or affected individuals and communities. Documenting residual risks will call for the system provider to fully consider the risks of deploying the AI product and will inform end users about potential negative impacts of interacting with the system.",
+        "metadata": {
+          "year": 2023,
+          "section": "part1_foundational",
+          "language": "en",
+          "chunk_index": 2,
+          "document_type": "framework"
+        },
+        "score": 10.752164,
+        "strategy": "bm25",
+        "hit": false
+      },
+      {
+        "id": "nist-ai-100-1:C:p12:c003",
+        "source_id": "nist-ai-100-1",
+        "source": "starter/data/NIST.AI.100-1.pdf",
+        "page": 12,
+        "text": "Once tolerance is defined, this AI RMF can be used to manage risks and to document risk management processes. 1.2.3 Risk Prioritization Attempting to eliminate negative risk entirely can be counterproductive in practice because not all incidents and failures can be eliminated. Unrealistic expectations about risk may lead organizations to allocate resources in a manner that makes risk triage inefficient or impractical or wastes scarce resources. A risk management culture can help organizations recognize that not all AI risks are the same, and resources can be allocated purposefully.",
+        "metadata": {
+          "year": 2023,
+          "section": "part1_foundational",
+          "language": "en",
+          "chunk_index": 3,
+          "document_type": "framework"
+        },
+        "score": 7.231725,
+        "strategy": "bm25",
+        "hit": false
+      }
+    ],
+    "context": "[nist-ai-100-1:C:p13:c002 | starter/data/NIST.AI.100-1.pdf | page 13]\nNonetheless, regularly assessing and prioritizing risk based on context remains important because non-human-facing AI systems can have downstream safety or social implications. Residual risk – defined as risk remaining after risk treatment (Source: ISO GUIDE 73) – directly impacts end users or affected individuals and communities. Documenting residual risks will call for the system provider to fully consider the risks of deploying the AI product and will inform end users about potential negative impacts of interacting with the system.",
+    "context_ids": [
+      "nist-ai-100-1:C:p13:c002"
+    ],
+    "context_chars": 610,
+    "elapsed_ms": 0.8950000010372605,
+    "hit1": true,
+    "hit3": true,
+    "context_hit": false
+  },
+  {
+    "query_id": "q19",
+    "split": "test",
+    "question": "Why does representing complex human phenomena with mathematical models pose a risk in human-AI interaction?",
+    "strategy": "test-bm25",
+    "top_k": 3,
+    "budget_chars": 800,
+    "filter_applied": null,
+    "gold": [
+      {
+        "source_id": "nist-ai-100-1",
+        "page": 45,
+        "evidence": "Representing complex human phenomena with mathematical models can come at the cost of removing necessary context. This loss of context may in turn make it difficult to understand individual and societal impacts that are key to AI risk management efforts."
+      }
+    ],
+    "results": [
+      {
+        "id": "nist-ai-100-1:C:p45:c001",
+        "source_id": "nist-ai-100-1",
+        "source": "starter/data/NIST.AI.100-1.pdf",
+        "page": 45,
+        "text": "Many of the data-driven approaches that AI systems rely on attempt to convert or represent individual and social observational and decision-making practices into measurable quantities. Representing complex human phenomena with mathematical models can come at the cost of removing necessary context. This loss of context may in turn make it difficult to understand individual and societal impacts that are key to AI risk management efforts. Issues that merit further consideration and research include:",
+        "metadata": {
+          "year": 2023,
+          "section": "appendix",
+          "language": "en",
+          "chunk_index": 1,
+          "document_type": "framework"
+        },
+        "score": 25.763662,
+        "strategy": "bm25",
+        "hit": true
+      },
+      {
+        "id": "nist-ai-100-1:C:p45:c000",
+        "source_id": "nist-ai-100-1",
+        "source": "starter/data/NIST.AI.100-1.pdf",
+        "page": 45,
+        "text": "NIST AI 100-1 AI RMF 1.0 Appendix C: AI Risk Management and Human-AI Interaction Organizations that design, develop, or deploy AI systems for use in operational settings may enhance their AI risk management by understanding current limitations of humanAI interaction. The AI RMF provides opportunities to clearly define and differentiate the various human roles and responsibilities when using, interacting with, or managing AI systems.",
+        "metadata": {
+          "year": 2023,
+          "section": "appendix",
+          "language": "en",
+          "chunk_index": 0,
+          "document_type": "framework"
+        },
+        "score": 11.996704,
+        "strategy": "bm25",
+        "hit": false
+      },
+      {
+        "id": "nist-ai-100-1:C:p45:c004",
+        "source_id": "nist-ai-100-1",
+        "source": "starter/data/NIST.AI.100-1.pdf",
+        "page": 45,
+        "text": "These biases can also influence downstream decisions by end users, decision makers, and policy makers and may lead to negative impacts. 3. Human-AI interaction results vary. Under certain conditions – for example, in perceptual-based judgment tasks – the AI part of the human-AI interaction can amplify human biases, leading to more biased decisions than the AI or human alone. When these variations are judiciously taken into account in organizing human-AI teams, however, they can result in complementarity and improved overall performance. Page 40",
+        "metadata": {
+          "year": 2023,
+          "section": "appendix",
+          "language": "en",
+          "chunk_index": 4,
+          "document_type": "framework"
+        },
+        "score": 11.973673,
+        "strategy": "bm25",
+        "hit": false
+      }
+    ],
+    "context": "[nist-ai-100-1:C:p45:c001 | starter/data/NIST.AI.100-1.pdf | page 45]\nMany of the data-driven approaches that AI systems rely on attempt to convert or represent individual and social observational and decision-making practices into measurable quantities. Representing complex human phenomena with mathematical models can come at the cost of removing necessary context. This loss of context may in turn make it difficult to understand individual and societal impacts that are key to AI risk management efforts. Issues that merit further consideration and research include:",
+    "context_ids": [
+      "nist-ai-100-1:C:p45:c001"
+    ],
+    "context_chars": 571,
+    "elapsed_ms": 1.001999999061809,
+    "hit1": true,
+    "hit3": true,
+    "context_hit": true
+  },
+  {
+    "query_id": "q20",
+    "split": "test",
+    "question": "What are the first two guiding attributes of the AI RMF listed in Appendix D?",
+    "strategy": "test-bm25",
+    "top_k": 3,
+    "budget_chars": 800,
+    "filter_applied": {
+      "section": "appendix"
+    },
+    "gold": [
+      {
+        "source_id": "nist-ai-100-1",
+        "page": 47,
+        "evidence": "The AI RMF strives to: 1. Be risk-based, resource-efficient, pro-innovation, and voluntary. 2. Be consensus-driven and developed and regularly updated through an open, transparent process."
+      }
+    ],
+    "results": [
+      {
+        "id": "nist-ai-100-1:C:p47:c000",
+        "source_id": "nist-ai-100-1",
+        "source": "starter/data/NIST.AI.100-1.pdf",
+        "page": 47,
+        "text": "NIST AI 100-1 AI RMF 1.0 Appendix D: Attributes of the AI RMF NIST described several key attributes of the AI RMF when work on the Framework first began. These attributes have remained intact and were used to guide the AI RMF’s development. They are provided here as a reference. The AI RMF strives to: 1. Be risk-based, resource-efficient, pro-innovation, and voluntary. 2. Be consensus-driven and developed and regularly updated through an open, transparent process. All stakeholders should have the opportunity to contribute to the AI RMF’s development.",
+        "metadata": {
+          "year": 2023,
+          "section": "appendix",
+          "language": "en",
+          "chunk_index": 0,
+          "document_type": "framework"
+        },
+        "score": 19.839063,
+        "strategy": "bm25",
+        "hit": true
+      },
+      {
+        "id": "nist-ai-100-1:C:p45:c000",
+        "source_id": "nist-ai-100-1",
+        "source": "starter/data/NIST.AI.100-1.pdf",
+        "page": 45,
+        "text": "NIST AI 100-1 AI RMF 1.0 Appendix C: AI Risk Management and Human-AI Interaction Organizations that design, develop, or deploy AI systems for use in operational settings may enhance their AI risk management by understanding current limitations of humanAI interaction. The AI RMF provides opportunities to clearly define and differentiate the various human roles and responsibilities when using, interacting with, or managing AI systems.",
+        "metadata": {
+          "year": 2023,
+          "section": "appendix",
+          "language": "en",
+          "chunk_index": 0,
+          "document_type": "framework"
+        },
+        "score": 4.607598,
+        "strategy": "bm25",
+        "hit": false
+      },
+      {
+        "id": "nist-ai-100-1:C:p42:c001",
+        "source_id": "nist-ai-100-1",
+        "source": "starter/data/NIST.AI.100-1.pdf",
+        "page": 42,
+        "text": "The technologies acquired from third-party entities may be complex or opaque, and risk tolerances may not align with the deploying or operating organization. End users of an AI system are the individuals or groups that use the system for specific purposes. These individuals or groups interact with an AI system in a specific context. End users can range in competency from AI experts to first-time technology end users.",
+        "metadata": {
+          "year": 2023,
+          "section": "appendix",
+          "language": "en",
+          "chunk_index": 1,
+          "document_type": "framework"
+        },
+        "score": 4.572481,
+        "strategy": "bm25",
+        "hit": false
+      }
+    ],
+    "context": "[nist-ai-100-1:C:p47:c000 | starter/data/NIST.AI.100-1.pdf | page 47]\nNIST AI 100-1 AI RMF 1.0 Appendix D: Attributes of the AI RMF NIST described several key attributes of the AI RMF when work on the Framework first began. These attributes have remained intact and were used to guide the AI RMF’s development. They are provided here as a reference. The AI RMF strives to: 1. Be risk-based, resource-efficient, pro-innovation, and voluntary. 2. Be consensus-driven and developed and regularly updated through an open, transparent process. All stakeholders should have the opportunity to contribute to the AI RMF’s development.",
+    "context_ids": [
+      "nist-ai-100-1:C:p47:c000"
+    ],
+    "context_chars": 626,
+    "elapsed_ms": 0.3907999998773448,
+    "hit1": true,
+    "hit3": true,
+    "context_hit": true
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "config": "test-dense",
+  "split": "test",
+  "n": 5,
+  "top_k": 3,
+  "budget_chars": 800,
+  "hit1": 4,
+  "hit1_rate": 0.8,
+  "hit3": 5,
+  "hit3_rate": 1.0,
+  "context_hit": 3,
+  "context_hit_rate": 0.6,
+  "avg_context_chars": 492,
+  "median_ms": 64.149,
+  "index_seconds": 16.6862,
+  "service_cost_usd": 0.0
+}

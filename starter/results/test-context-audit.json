@@ -1,0 +1,78 @@
+{
+  "split": "test",
+  "scale": "0 = no evidence; 1 = partial evidence missing condition or source; 2 = complete evidence and source",
+  "audits": {
+    "test-tfidf": {
+      "counts": {"0": 1, "1": 1, "2": 3},
+      "mean_grade": 1.4,
+      "items": [
+        {
+          "query_id": "q16",
+          "context_ids": ["nist-ai-100-1:C:p07:c000"],
+          "context_grade": 2,
+          "reason": "Contains full ISO 26000:2010 social responsibility quote and source/page 7."
+        },
+        {
+          "query_id": "q17",
+          "context_ids": ["nist-ai-100-1:C:p17:c004"],
+          "context_grade": 0,
+          "reason": "Top-1 chunk p19:c000 exceeded budget=800 after header and was dropped; context only has p17:c004 about characteristic tradeoffs."
+        },
+        {
+          "query_id": "q18",
+          "context_ids": ["nist-ai-100-1:C:p13:c002"],
+          "context_grade": 1,
+          "reason": "Top-1 chunk p37:c001 (MANAGE 1.4) was dropped by budget=800; fallback p13:c002 defines general residual risk but lacks MANAGE 1.4 definition of negative residual risks (sum of all unmitigated risks) and page 37 source."
+        },
+        {
+          "query_id": "q19",
+          "context_ids": ["nist-ai-100-1:C:p45:c001"],
+          "context_grade": 2,
+          "reason": "Contains full explanation of mathematical modeling context loss and source/page 45."
+        },
+        {
+          "query_id": "q20",
+          "context_ids": ["nist-ai-100-1:C:p47:c000"],
+          "context_grade": 2,
+          "reason": "Contains Appendix D attributes 1 and 2 and source/page 47."
+        }
+      ]
+    },
+    "test-imp2-hybrid-neighbor-b2400": {
+      "counts": {"0": 0, "1": 0, "2": 5},
+      "mean_grade": 2.0,
+      "items": [
+        {
+          "query_id": "q16",
+          "context_ids": ["nist-ai-100-1:C:p07:c000", "nist-ai-100-1:C:p07:c001", "nist-ai-100-1:C:p06:c004"],
+          "context_grade": 2,
+          "reason": "Contains complete p07:c000 evidence and source/page 7."
+        },
+        {
+          "query_id": "q17",
+          "context_ids": ["nist-ai-100-1:C:p19:c000", "nist-ai-100-1:C:p19:c002", "nist-ai-100-1:C:p19:c003"],
+          "context_grade": 2,
+          "reason": "Contains complete p19:c000 evidence on test sets, test methodology, and documentation (page 19)."
+        },
+        {
+          "query_id": "q18",
+          "context_ids": ["nist-ai-100-1:C:p13:c002", "nist-ai-100-1:C:p37:c001", "nist-ai-100-1:C:p12:c003"],
+          "context_grade": 2,
+          "reason": "Contains both p37:c001 (exact MANAGE 1.4 definition and page 37 source) and p13:c002 (general residual risk)."
+        },
+        {
+          "query_id": "q19",
+          "context_ids": ["nist-ai-100-1:C:p45:c001", "nist-ai-100-1:C:p45:c002", "nist-ai-100-1:C:p45:c000"],
+          "context_grade": 2,
+          "reason": "Contains complete p45:c001 evidence and source/page 45."
+        },
+        {
+          "query_id": "q20",
+          "context_ids": ["nist-ai-100-1:C:p47:c000", "nist-ai-100-1:C:p45:c000", "nist-ai-100-1:C:p44:c002"],
+          "context_grade": 2,
+          "reason": "Contains complete p47:c000 evidence and source/page 47."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "config": "test-imp2-hybrid-neighbor-b2400",
+  "split": "test",
+  "n": 5,
+  "top_k": 3,
+  "budget_chars": 2400,
+  "hit1": 4,
+  "hit1_rate": 0.8,
+  "hit3": 5,
+  "hit3_rate": 1.0,
+  "context_hit": 5,
+  "context_hit_rate": 1.0,
+  "avg_context_chars": 1984.8,
+  "median_ms": 65.312,
+  "index_seconds": 16.6995,
+  "service_cost_usd": 0.0
+}
