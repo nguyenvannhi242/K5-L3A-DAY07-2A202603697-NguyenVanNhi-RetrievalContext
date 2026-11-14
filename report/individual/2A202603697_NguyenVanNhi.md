@@ -63,15 +63,22 @@ Một cấu hình có thể đồng thời là phương pháp mới và cải th
 | Baseline (`test-agent-baseline`) / `test` | 7/7 (100%) | 1: 2 câu, 2: 5 câu | 0: 3, 1: 0, 2: 2 · TB **0.80 / 2** | 2/2 (100%) | 2/2 (100%) | 2/2 (100%) | 3/5 (60.0%) |
 | Selected (`test-agent-selected`) / `test` | 7/7 (100%) | 1: 5 câu, 2: 1 câu, 3: 1 câu | 0: 0, 1: 0, 2: 5 · TB **2.00 / 2** | 5/5 (100%) | 5/5 (100%) | 2/2 (100%) | 0/5 (0.0%) |
 
-| Query ID | Loại câu | Tool call và kết quả | Câu trả lời và citation | Nhãn, lý do |
+| Query ID | Cấu hình | Tool call và kết quả | Câu trả lời và citation | Nhãn, lý do |
 |---|---|---|---|---|
-| `q16` | Có đáp án | 1 search (`Executive Summary ISO 26000:2010...`), khớp `p07:c000` (trang 7) | Trích đúng định nghĩa trách nhiệm xã hội của ISO 26000:2010 `[nist-ai-100-1:C:p07:c000]` | `answer_grade=2`, `cit=[true]` (Baseline: `2`) |
-| `q17` | Có đáp án | 1 search (`AI RMF accuracy measurements...`), khớp `p19:c000` (trang 19) | Trả lời đủ: realistic test sets đại diện điều kiện sử dụng và chi tiết test methodology trong tài liệu `[nist-ai-100-1:C:p19:c000]` | `answer_grade=2`, `cit=[true]` (Baseline: `0`, mất chunk do budget 800) |
-| `q18` | Có đáp án | 1 search (`MANAGE 1.4 negative residual risk defined`), khớp `p37:c001` (trang 37) | Định nghĩa chính xác sum of all unmitigated risks và yêu cầu ghi nhận cho downstream acquirers & end users `[nist-ai-100-1:C:p37:c001]` | `answer_grade=2`, `cit=[true]` (Baseline: `0`, mất chunk do budget 800) |
-| `q19` | Có đáp án | 1 search (`mathematical models representing complex human phenomena...`), khớp `p45:c001` (trang 45) | Giải thích đúng rủi ro mất ngữ cảnh (loss of context) gây khó hiểu tác động cá nhân/xã hội `[nist-ai-100-1:C:p45:c001]` | `answer_grade=2`, `cit=[true]` (Baseline: `0`, từ chối nhầm) |
-| `q20` | Có đáp án | 1 search (`Appendix D first two guiding attributes...`), khớp `p47:c000` (trang 47) | Nêu đủ 2 thuộc tính đầu: (1) risk-based, resource-efficient, pro-innovation, voluntary; (2) consensus-driven, open/transparent process `[nist-ai-100-1:C:p47:c000]` | `answer_grade=2`, `cit=[true]` (Baseline: `2`) |
-| `q23` | Thiếu bằng chứng | 2 searches (`Measure minimum accuracy percentage threshold...`, `MEASURE accuracy benchmark metrics...`) | `"Không đủ bằng chứng để trả lời."` (`citations=[]`) | `abstention_correct=true` (đối chiếu p.33–36 không có ngưỡng phần trăm tối thiểu) |
-| `q24` | Thiếu bằng chứng | 3 searches (`Appendix A ... EU AI Act ... ISO/IEC 42001` với 3 biến thể query) | `"Không đủ bằng chứng để trả lời."` (`citations=[]`) | `abstention_correct=true` (đối chiếu Appendix A–D không có EU AI Act hay ISO 42001) |
+| `q16` | **Baseline** | 1 search (TF-IDF), khớp `p07:c000` (trang 7) | Trích đúng định nghĩa trách nhiệm xã hội ISO 26000:2010 `[p07:c000]` | `grade=2`, `cit=[true]` (Đầy đủ và chính xác) |
+| `q16` | **Selected** | 1 search (Hybrid RRF), khớp `p07:c000` (trang 7) | Trích đúng định nghĩa trách nhiệm xã hội ISO 26000:2010 `[p07:c000]` | `grade=2`, `cit=[true]` (Đầy đủ và chính xác) |
+| `q17` | **Baseline** | 2 searches (TF-IDF). `p19:c000` bị rớt khỏi context do vượt `budget=800` | `"Không đủ bằng chứng để trả lời."` (`citations=[]`) | `grade=0`, từ chối nhầm do thiếu context budget |
+| `q17` | **Selected** | 1 search (Hybrid RRF), khớp và giữ trọn `p19:c000` (trang 19) nhờ `budget=3500` | Trả lời đủ: realistic test sets đại diện điều kiện sử dụng và chi tiết test methodology `[p19:c000]` | `grade=2`, `cit=[true]` (Đầy đủ và chính xác) |
+| `q18` | **Baseline** | 2 searches (TF-IDF). `p37:c001` bị rớt khỏi context do vượt `budget=800` | `"Không đủ bằng chứng để trả lời."` (`citations=[]`) | `grade=0`, từ chối nhầm do thiếu context budget |
+| `q18` | **Selected** | 1 search (Hybrid RRF), khớp và giữ trọn `p37:c001` (trang 37) | Định nghĩa chính xác sum of all unmitigated risks và ghi nhận cho downstream acquirers & end users `[p37:c001]` | `grade=2`, `cit=[true]` (Đầy đủ và chính xác) |
+| `q19` | **Baseline** | 2 searches (TF-IDF). Không đưa `p45:c001` vào context do lệch ranking | `"Không đủ bằng chứng để trả lời."` (`citations=[]`) | `grade=0`, từ chối nhầm do lexical TF-IDF trượt |
+| `q19` | **Selected** | 1 search (Hybrid RRF), khớp `p45:c001` (trang 45) | Giải thích đúng rủi ro mất ngữ cảnh (loss of context) gây khó hiểu tác động cá nhân/xã hội `[p45:c001]` | `grade=2`, `cit=[true]` (Đầy đủ và chính xác) |
+| `q20` | **Baseline** | 1 search (TF-IDF), khớp `p47:c000` (trang 47) | Nêu đủ 2 thuộc tính đầu Appendix D: (1) risk-based...; (2) consensus-driven... `[p47:c000]` | `grade=2`, `cit=[true]` (Đầy đủ và chính xác) |
+| `q20` | **Selected** | 1 search (Hybrid RRF), khớp `p47:c000` (trang 47) | Nêu đủ 2 thuộc tính đầu Appendix D: (1) risk-based...; (2) consensus-driven... `[p47:c000]` | `grade=2`, `cit=[true]` (Đầy đủ và chính xác) |
+| `q23` | **Baseline** | 2 searches (TF-IDF). Context không có ngưỡng % tối thiểu | `"Không đủ bằng chứng để trả lời."` (`citations=[]`) | `abstention_correct=true` (Từ chối chính xác) |
+| `q23` | **Selected** | 2 searches (Hybrid RRF). Context không có ngưỡng % tối thiểu | `"Không đủ bằng chứng để trả lời."` (`citations=[]`) | `abstention_correct=true` (Từ chối chính xác) |
+| `q24` | **Baseline** | 2 searches (TF-IDF). Context không có EU AI Act / ISO 42001 | `"Không đủ bằng chứng để trả lời."` (`citations=[]`) | `abstention_correct=true` (Từ chối chính xác) |
+| `q24` | **Selected** | 3 searches (Hybrid RRF). Context không có EU AI Act / ISO 42001 | `"Không đủ bằng chứng để trả lời."` (`citations=[]`) | `abstention_correct=true` (Từ chối chính xác) |
 
 - Đường dẫn trace, nhãn, lệnh chạy, thời gian và chi phí:
   - Lệnh chạy `dev`: `python src/deepseek_agent.py --split dev --config both` và tổng hợp bằng `python starter/agent_metrics.py`.
