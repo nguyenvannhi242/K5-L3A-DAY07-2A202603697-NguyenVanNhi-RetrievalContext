@@ -1,0 +1,346 @@
+[
+  {
+    "id": "q01",
+    "split": "dev",
+    "question": "How does the AI RMF define an AI system?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer",
+    "expected_answer": "An engineered or machine-based system that can, for a given set of objectives, generate outputs such as predictions, recommendations, or decisions influencing real or virtual environments.",
+    "gold": [
+      {
+        "source_id": "nist-ai-100-1",
+        "page": 6,
+        "evidence": "The AI RMF refers to an AI system as an engineered or machine-based system that can, for a given set of objectives, generate outputs such as predictions, recommendations, or decisions influencing real or virtual environments."
+      }
+    ]
+  },
+  {
+    "id": "q02",
+    "split": "dev",
+    "question": "What are the two factors of risk when considering the negative impact of a potential event?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer",
+    "expected_answer": "1) The negative impact, or magnitude of harm, that would arise if the circumstance or event occurs, and 2) the likelihood of occurrence.",
+    "gold": [
+      {
+        "source_id": "nist-ai-100-1",
+        "page": 9,
+        "evidence": "When considering the negative impact of a potential event, risk is a function of 1) the negative impact, or magnitude of harm, that would arise if the circumstance or event occurs and 2) the likelihood of occurrence"
+      }
+    ]
+  },
+  {
+    "id": "q03",
+    "split": "dev",
+    "question": "Does the AI RMF prescribe a specific risk tolerance for organizations?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer",
+    "expected_answer": "No. While the AI RMF can be used to prioritize risk, it does not prescribe risk tolerance, which is highly contextual and application and use-case specific.",
+    "gold": [
+      {
+        "source_id": "nist-ai-100-1",
+        "page": 12,
+        "evidence": "While the AI RMF can be used to prioritize risk, it does not prescribe risk tolerance."
+      }
+    ]
+  },
+  {
+    "id": "q04",
+    "split": "dev",
+    "question": "Can using the AI RMF by itself create organizational incentives and accountability structures?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer",
+    "expected_answer": "No. Use of the AI RMF alone will not lead to those changes or provide the appropriate incentives; organizations must establish and maintain accountability mechanisms, roles, culture, and incentive structures.",
+    "gold": [
+      {
+        "source_id": "nist-ai-100-1",
+        "page": 14,
+        "evidence": "Use of the AI RMF alone will not lead to these changes or provide the appropriate incentives."
+      }
+    ]
+  },
+  {
+    "id": "q05",
+    "split": "dev",
+    "question": "What are the seven characteristics of trustworthy AI systems listed in the AI RMF?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer",
+    "expected_answer": "Valid and reliable, safe, secure and resilient, accountable and transparent, explainable and interpretable, privacy-enhanced, and fair with harmful bias managed.",
+    "gold": [
+      {
+        "source_id": "nist-ai-100-1",
+        "page": 17,
+        "evidence": "Characteristics of trustworthy AI systems include: valid and reliable, safe, secure and resilient, accountable and transparent, explainable and interpretable, privacy-enhanced, and fair with harmful bias managed."
+      }
+    ]
+  },
+  {
+    "id": "q06",
+    "split": "dev",
+    "question": "How is robustness or generalizability defined in Section 3 of the AI RMF?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer",
+    "expected_answer": "The ability of a system to maintain its level of performance under a variety of circumstances.",
+    "gold": [
+      {
+        "source_id": "nist-ai-100-1",
+        "page": 19,
+        "evidence": "Robustness or generalizability is defined as the “ability of a system to maintain its level of performance under a variety of circumstances”"
+      }
+    ]
+  },
+  {
+    "id": "q07",
+    "split": "dev",
+    "question": "Does having a transparent AI system guarantee that the system is also accurate, secure, or fair?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer",
+    "expected_answer": "No. A transparent system is not necessarily an accurate, privacy-enhanced, secure, or fair system, though it is difficult to determine whether an opaque system possesses those characteristics.",
+    "gold": [
+      {
+        "source_id": "nist-ai-100-1",
+        "page": 21,
+        "evidence": "A transparent system is not necessarily an accurate, privacy-enhanced, secure, or fair system."
+      }
+    ]
+  },
+  {
+    "id": "q08",
+    "split": "dev",
+    "question": "How do transparency, explainability, and interpretability differ in the questions they answer?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer",
+    "expected_answer": "Transparency answers 'what happened' in the system, explainability answers 'how' a decision was made, and interpretability answers 'why' a decision was made and its meaning to the user.",
+    "gold": [
+      {
+        "source_id": "nist-ai-100-1",
+        "page": 22,
+        "evidence": "Transparency can answer the question of “what happened” in the system. Explainability can answer the question of “how” a decision was made in the system. Interpretability can answer the question of “why” a decision was made by the system and its meaning or context to the user."
+      }
+    ]
+  },
+  {
+    "id": "q09",
+    "split": "dev",
+    "question": "In Part 1 (Foundational Information), what are the three expected benefits for users evaluating AI RMF effectiveness?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer",
+    "expected_answer": "Enhanced processes for governing, mapping, measuring, and managing AI risk; improved awareness of relationships and tradeoffs among trustworthiness characteristics; and explicit processes for making go/no-go system decisions.",
+    "gold": [
+      {
+        "source_id": "nist-ai-100-1",
+        "page": 24,
+        "evidence": "• enhanced processes for governing, mapping, measuring, and managing AI risk, and clearly documenting outcomes; • improved awareness of the relationships and tradeoffs among trustworthiness characteristics, socio-technical approaches, and AI risks; • explicit processes for making go/no-go system commissioning and deployment decisions;"
+      }
+    ],
+    "filter": {
+      "section": "part1_foundational"
+    }
+  },
+  {
+    "id": "q10",
+    "split": "dev",
+    "question": "Which AI RMF Core function is described as cross-cutting and infused throughout AI risk management?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer",
+    "expected_answer": "GOVERN is a cross-cutting function that is infused throughout AI risk management and enables the other functions.",
+    "gold": [
+      {
+        "source_id": "nist-ai-100-1",
+        "page": 27,
+        "evidence": "GOVERN is a cross-cutting function that is infused throughout AI risk management and enables the other functions of the process."
+      }
+    ]
+  },
+  {
+    "id": "q11",
+    "split": "dev",
+    "question": "What does GOVERN 1.7 require regarding decommissioning AI systems?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer",
+    "expected_answer": "Processes and procedures are in place for decommissioning and phasing out AI systems safely and in a manner that does not increase risks or decrease the organization's trustworthiness.",
+    "gold": [
+      {
+        "source_id": "nist-ai-100-1",
+        "page": 28,
+        "evidence": "GOVERN 1.7: Processes and procedures are in place for decommissioning and phasing out AI systems safely and in a manner that does not increase risks or decrease the organization’s trustworthiness."
+      }
+    ]
+  },
+  {
+    "id": "q12",
+    "split": "dev",
+    "question": "In Part 2 (Core and Profiles), what should be documented under MAP 1.1 before deploying an AI system?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer",
+    "expected_answer": "Intended purposes, potentially beneficial uses, context-specific laws, norms and expectations, and prospective settings in which the AI system will be deployed.",
+    "gold": [
+      {
+        "source_id": "nist-ai-100-1",
+        "page": 31,
+        "evidence": "prospective settings in which the AI system will be deployed are understood and documented."
+      }
+    ],
+    "filter": {
+      "section": "part2_core_profiles"
+    }
+  },
+  {
+    "id": "q13",
+    "split": "dev",
+    "question": "Under MEASURE 1.1, what must be done if certain AI risks or trustworthiness characteristics will not or cannot be measured?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer",
+    "expected_answer": "The risks or trustworthiness characteristics that will not or cannot be measured must be properly documented.",
+    "gold": [
+      {
+        "source_id": "nist-ai-100-1",
+        "page": 34,
+        "evidence": "The risks or trustworthiness characteristics that will not – or cannot – be measured are properly documented."
+      }
+    ]
+  },
+  {
+    "id": "q14",
+    "split": "dev",
+    "question": "What are the four risk response options listed under MANAGE 1.3?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer",
+    "expected_answer": "Mitigating, transferring, avoiding, or accepting.",
+    "gold": [
+      {
+        "source_id": "nist-ai-100-1",
+        "page": 37,
+        "evidence": "Risk response options can include mitigating, transferring, avoiding, or accepting."
+      }
+    ]
+  },
+  {
+    "id": "q15",
+    "split": "dev",
+    "question": "In the Appendix, during which phases of the AI lifecycle are AI Design tasks performed?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer",
+    "expected_answer": "During the Application Context and Data and Input phases of the AI lifecycle.",
+    "gold": [
+      {
+        "source_id": "nist-ai-100-1",
+        "page": 40,
+        "evidence": "AI Design tasks are performed during the Application Context and Data and Input phases of the AI lifecycle in Figure 2."
+      }
+    ],
+    "filter": {
+      "section": "appendix"
+    }
+  },
+  {
+    "id": "q16",
+    "split": "test",
+    "question": "In the Executive Summary, how does ISO 26000:2010 define social responsibility?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer",
+    "expected_answer": "The organization's responsibility for the impacts of its decisions and activities on society and the environment through transparent and ethical behavior.",
+    "gold": [
+      {
+        "source_id": "nist-ai-100-1",
+        "page": 7,
+        "evidence": "Social responsibility can refer to the organization’s responsibility “for the impacts of its decisions and activities on society and the environment through transparent and ethical behavior” ( ISO 26000:2010)."
+      }
+    ],
+    "filter": {
+      "section": "executive_summary"
+    }
+  },
+  {
+    "id": "q17",
+    "split": "test",
+    "question": "What must always accompany accuracy measurements for AI systems?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer",
+    "expected_answer": "Clearly defined and realistic test sets representative of expected use conditions, along with details about test methodology in associated documentation.",
+    "gold": [
+      {
+        "source_id": "nist-ai-100-1",
+        "page": 19,
+        "evidence": "Accuracy measurements should always be paired with clearly defined and realistic test sets – that are representative of conditions of expected use – and details about test methodology; these should be included in associated documentation."
+      }
+    ]
+  },
+  {
+    "id": "q18",
+    "split": "test",
+    "question": "How is negative residual risk defined in MANAGE 1.4?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer",
+    "expected_answer": "The sum of all unmitigated risks.",
+    "gold": [
+      {
+        "source_id": "nist-ai-100-1",
+        "page": 37,
+        "evidence": "MANAGE 1.4: Negative residual risks (defined as the sum of all unmitigated risks) to both downstream acquirers of AI systems and end users are documented."
+      }
+    ]
+  },
+  {
+    "id": "q19",
+    "split": "test",
+    "question": "Why does representing complex human phenomena with mathematical models pose a risk in human-AI interaction?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer",
+    "expected_answer": "It can come at the cost of removing necessary context, which makes it difficult to understand individual and societal impacts key to AI risk management.",
+    "gold": [
+      {
+        "source_id": "nist-ai-100-1",
+        "page": 45,
+        "evidence": "Representing complex human phenomena with mathematical models can come at the cost of removing necessary context. This loss of context may in turn make it difficult to understand individual and societal impacts that are key to AI risk management efforts."
+      }
+    ]
+  },
+  {
+    "id": "q20",
+    "split": "test",
+    "question": "What are the first two guiding attributes of the AI RMF listed in Appendix D?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer",
+    "expected_answer": "1) Be risk-based, resource-efficient, pro-innovation, and voluntary; 2) Be consensus-driven and developed and regularly updated through an open, transparent process.",
+    "gold": [
+      {
+        "source_id": "nist-ai-100-1",
+        "page": 47,
+        "evidence": "The AI RMF strives to: 1. Be risk-based, resource-efficient, pro-innovation, and voluntary. 2. Be consensus-driven and developed and regularly updated through an open, transparent process."
+      }
+    ]
+  },
+  {
+    "id": "q21",
+    "split": "dev",
+    "question": "What are the mandatory civil penalties or fine amounts imposed by NIST on organizations that fail to comply with the AI RMF 1.0?",
+    "answerable": false,
+    "expected_behavior": "search_and_abstain",
+    "absence_reason": "Checked all 42 valid pages (170 chunks) of NIST AI 100-1; the AI RMF is explicitly voluntary, rights-preserving, and non-sector-specific (pages 6-7) and contains no mandatory civil penalties, fines, or enforcement sanctions."
+  },
+  {
+    "id": "q22",
+    "split": "dev",
+    "question": "What is the required registration fee and annual renewal schedule for obtaining official NIST AI RMF 1.0 certification?",
+    "answerable": false,
+    "expected_behavior": "search_and_abstain",
+    "absence_reason": "Checked all 42 valid pages (170 chunks) of NIST AI 100-1; NIST does not offer a paid AI RMF certification program and specifies no registration fees or annual certification renewal schedules."
+  },
+  {
+    "id": "q23",
+    "split": "test",
+    "question": "Under the Measure function in Part 2, what specific minimum accuracy percentage threshold must all high-risk AI models achieve before deployment?",
+    "answerable": false,
+    "expected_behavior": "search_and_abstain",
+    "absence_reason": "Checked Part 2 Measure function (pages 33-36) and all 170 chunks; the framework qualitative guidance recommends context-specific metrics and TEVV practices but never prescribes a universal numeric minimum accuracy percentage threshold."
+  },
+  {
+    "id": "q24",
+    "split": "test",
+    "question": "How does Appendix A map the AI RMF 1.0 Core functions to specific articles of the European Union AI Act and ISO/IEC 42001?",
+    "answerable": false,
+    "expected_behavior": "search_and_abstain",
+    "absence_reason": "Checked Appendices A-D (pages 40-47) and all 170 chunks; neither the EU AI Act articles nor ISO/IEC 42001 appear anywhere in the NIST AI 100-1 (January 2023) document."
+  }
+]
