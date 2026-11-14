@@ -46,15 +46,30 @@ Một cấu hình có thể đồng thời là phương pháp mới và cải th
 ## Agent và đánh giá
 
 - Tool, số lượt gọi, điều kiện dừng, cách chọn context và xử lý lỗi:
+  - **Controller**: `DeepSeekController` (`deepseek-flash`, `temperature=0.0`, `max_tokens=4096`, `response_format=json_object`) kết nối vào vòng lặp `run_agent()` của `starter/agentic.py`. Coi toàn bộ nội dung tài liệu là dữ liệu thuần túy, không thực thi chỉ dẫn trong chunk.
+  - **Tool & Tham số**:
+    - `baseline`: `TfidfRetriever`, `top_k=3`, `budget=800` chars, `max_searches=2`.
+    - `selected`: `HybridRRFRetriever` (Dense `pgvector` Day 6 + BM25 + Lead-in Neighbor Expansion + `auto_filter`), `top_k=5`, `budget=3500` chars, `max_searches=3` (mở rộng từ `budget=2400` sau thử nghiệm sơ bộ trên `dev` để tránh việc 3 chunk lượt search 1 chiếm gần hết ngân sách khiến lượt search 2 không nạp thêm được chunk mới ở các câu cần truy vấn lại).
+  - **Điều kiện dừng**: Dừng khi model xuất `action="answer"` kèm citations hợp lệ nằm trong `context_ids` (và xuất hiện `[chunk-id]` trong câu trả lời), hoặc tự nguyện từ chối (`"Không đủ bằng chứng để trả lời."`, `citations=[]`), hoặc chạm ngưỡng `max_searches`.
+  - **Cách chọn context & xử lý lỗi**: Dùng `pack_context` (dedup theo `id`, giữ thứ tự ưu tiên theo score/rank trong giới hạn ký tự `budget`). Parser JSON (`parse_json_object`) trích xuất block `{...}` hợp lệ đầu tiên và thử lại tối đa 1 lần nếu phản hồi cắt ngọn/dư ký tự; lỗi API/DB thực sự được ghi nhận riêng vào `status="error"` theo quy định của `agent_metrics.py`, không thay thế bằng kết quả giả.
 
 | Cấu hình / split | Tool use | Số lượt gọi | Grounded answer 0/1/2 và trung bình | Citation hợp lệ | Câu có citation | Abstention đúng | Từ chối nhầm |
 |---|---|---|---|---|---|---|---|
+| Baseline (`dev-agent-baseline`) / `dev` | 17/17 (100%) | 1: 8 câu, 2: 9 câu | 0: 7, 1: 2, 2: 6 · TB **0.93 / 2** | 8/8 (100%) | 8/8 (100%) | 2/2 (100%) | 7/15 (46.7%) |
+| Selected (`dev-agent-selected`) / `dev` | 17/17 (100%) | 1: 15 câu, 2: 1 câu, 3: 1 câu | 0: 1, 1: 0, 2: 14 · TB **1.87 / 2** | 28/28 (100%) | 15/15 (100%) | 1/2 (50.0%) | 1/15 (6.7%) |
 
 | Query ID | Loại câu | Tool call và kết quả | Câu trả lời và citation | Nhãn, lý do |
 |---|---|---|---|---|
+| | | | | |
 
 - Đường dẫn trace, nhãn, lệnh chạy, thời gian và chi phí:
+  - Lệnh chạy `dev`: `python src/deepseek_agent.py --split dev --config both` và tổng hợp bằng `python starter/agent_metrics.py`.
+  - `dev-agent-baseline`: `starter/results/dev-agent-baseline/{traces,reviews,summary}.json` (`36,525` tokens, `\$0.005877`, `55.24s`).
+  - `dev-agent-selected`: `starter/results/dev-agent-selected/{traces,reviews,summary}.json` (`45,016` tokens, `\$0.007295`, `58.08s`).
 - Kết quả trước/sau, ví dụ lỗi, đánh đổi và giới hạn:
+  - Trên `dev`, chuyển từ `baseline` sang `selected` giúp điểm Grounded Answer trung bình tăng gấp đôi từ **0.93/2** lên **1.87/2** (14/15 câu có đáp án đạt mức 2 tuyệt đối), giảm từ chối nhầm từ **7/15** xuống **1/15**.
+  - *Ví dụ lỗi `q01` trên `dev-agent-selected`*: Khi tự viết lại query ở lượt 1 thành `'AI system definition AI RMF 1.0'`, từ khóa `'1.0'` khiến BM25 ưu tiên các chunk đầu trang chứa header `'NIST AI 100-1 AI RMF 1.0'` thay vì `p06:c001`; sang lượt 2–3 model thêm `'Appendix B'` làm `infer_metadata_filter` kích hoạt lọc `section='appendix'`, dẫn tới không quay lại được trang 6 và từ chối nhầm.
+  - *Ví dụ trường hợp ranh giới `q21` (`answerable=False`)*: Model trả lời đúng bản chất tài liệu là tự nguyện (`voluntary`) không quy định phạt hành chính kèm 3 citation hợp lệ (`p07:c002`, `p47:c000`, `p26:c000`) thay vì xuất `status="abstain"`, nên theo quy tắc chấm cứng `agent_metrics.py` bị tính `abstention_correct=false`.
 
 ## Thử thách nâng cao (nếu thực hiện)
 

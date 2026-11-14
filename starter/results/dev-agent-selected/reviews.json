@@ -1,0 +1,104 @@
+[
+  {
+    "query_id": "q01",
+    "answer_grade": 0,
+    "citation_support": [],
+    "reason": "False abstention: LLM rewrote search 1 with '1.0' (matching page headers) and searches 2-3 with 'Appendix B', triggering appendix section filter and missing p06:c001."
+  },
+  {
+    "query_id": "q02",
+    "answer_grade": 2,
+    "citation_support": [true],
+    "reason": "Accurate and complete answer citing p09:c001."
+  },
+  {
+    "query_id": "q03",
+    "answer_grade": 2,
+    "citation_support": [true, true, true],
+    "reason": "Accurate and complete answer; all three citations (p12:c000, p12:c002, p47:c002) directly support their respective statements."
+  },
+  {
+    "query_id": "q04",
+    "answer_grade": 2,
+    "citation_support": [true],
+    "reason": "Accurate and complete answer citing p14:c000."
+  },
+  {
+    "query_id": "q05",
+    "answer_grade": 2,
+    "citation_support": [true, true, true],
+    "reason": "Accurate and complete list of seven characteristics and tradeoffs supported by p17:c000, p17:c002, p18:c002."
+  },
+  {
+    "query_id": "q06",
+    "answer_grade": 2,
+    "citation_support": [true, true],
+    "reason": "Accurate and complete definition and tension with accuracy supported by p19:c001 and p19:c000."
+  },
+  {
+    "query_id": "q07",
+    "answer_grade": 2,
+    "citation_support": [true, true],
+    "reason": "Accurate and complete answer supported by p21:c000 and p20:c003."
+  },
+  {
+    "query_id": "q08",
+    "answer_grade": 2,
+    "citation_support": [true, true, true],
+    "reason": "Accurate distinction of what happened / how / why supported by p22:c000, p20:c003, p21:c003."
+  },
+  {
+    "query_id": "q09",
+    "answer_grade": 2,
+    "citation_support": [true, true],
+    "reason": "Accurate and complete three expected benefits supported by p24:c000 and p24:c001 (thanks to neighbor expansion)."
+  },
+  {
+    "query_id": "q10",
+    "answer_grade": 2,
+    "citation_support": [true, true, true],
+    "reason": "Accurate answer identifying GOVERN supported by p27:c000, p25:c001, p08:c000."
+  },
+  {
+    "query_id": "q11",
+    "answer_grade": 2,
+    "citation_support": [true],
+    "reason": "Accurate and complete answer on GOVERN 1.7 decommissioning citing p28:c001."
+  },
+  {
+    "query_id": "q12",
+    "answer_grade": 2,
+    "citation_support": [true],
+    "reason": "Accurate and complete answer on MAP 1.1 documentation citing p31:c000."
+  },
+  {
+    "query_id": "q13",
+    "answer_grade": 2,
+    "citation_support": [true],
+    "reason": "Accurate and complete answer on MEASURE 1.1 documentation citing p34:c000."
+  },
+  {
+    "query_id": "q14",
+    "answer_grade": 2,
+    "citation_support": [true],
+    "reason": "Accurate list of four risk response options under MANAGE 1.3 citing p37:c001."
+  },
+  {
+    "query_id": "q15",
+    "answer_grade": 2,
+    "citation_support": [true],
+    "reason": "Accurate answer identifying Application Context and Data and Input phases citing p40:c000."
+  },
+  {
+    "query_id": "q21",
+    "citation_support": [true, true, true],
+    "abstention_correct": false,
+    "reason": "Model answered negatively with valid voluntary-framework citations (p07:c002, p47:c000, p26:c000) instead of returning status='abstain' on the unanswerable fine-amount query."
+  },
+  {
+    "query_id": "q22",
+    "citation_support": [],
+    "abstention_correct": true,
+    "reason": "Correctly abstained on unanswerable certification fee/renewal query."
+  }
+]

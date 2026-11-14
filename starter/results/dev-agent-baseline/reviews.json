@@ -1,0 +1,104 @@
+[
+  {
+    "query_id": "q01",
+    "answer_grade": 0,
+    "citation_support": [],
+    "reason": "False abstention: TF-IDF did not retrieve p06:c001 in top-3 within budget=800."
+  },
+  {
+    "query_id": "q02",
+    "answer_grade": 1,
+    "citation_support": [true],
+    "reason": "Cited p32:c003 (MAP 5.1) which mentions likelihood and magnitude of impact, partially correct concept but missed exact Part 1 p.9 definition (magnitude of harm / negative impact if event occurs)."
+  },
+  {
+    "query_id": "q03",
+    "answer_grade": 1,
+    "citation_support": [true],
+    "reason": "Cited p38:c002 (Profiles) correctly supporting that profiles depend on user risk tolerance, but missed explicit p12:c000 statement that AI RMF does not prescribe risk tolerance."
+  },
+  {
+    "query_id": "q04",
+    "answer_grade": 2,
+    "citation_support": [true],
+    "reason": "Accurate and complete answer citing p14:c000 directly."
+  },
+  {
+    "query_id": "q05",
+    "answer_grade": 2,
+    "citation_support": [true],
+    "reason": "Accurate and complete list of all seven trustworthy AI characteristics citing p17:c000."
+  },
+  {
+    "query_id": "q06",
+    "answer_grade": 2,
+    "citation_support": [true],
+    "reason": "Accurate and complete definition of robustness/generalizability citing p19:c001."
+  },
+  {
+    "query_id": "q07",
+    "answer_grade": 0,
+    "citation_support": [],
+    "reason": "False abstention on answerable question due to budget=800 dropping p21:c000."
+  },
+  {
+    "query_id": "q08",
+    "answer_grade": 2,
+    "citation_support": [true],
+    "reason": "Accurate distinction of what happened / how / why citing p22:c000."
+  },
+  {
+    "query_id": "q09",
+    "answer_grade": 0,
+    "citation_support": [],
+    "reason": "False abstention on answerable question: TF-IDF missed p24:c001."
+  },
+  {
+    "query_id": "q10",
+    "answer_grade": 2,
+    "citation_support": [true],
+    "reason": "Accurate answer identifying GOVERN citing p27:c000."
+  },
+  {
+    "query_id": "q11",
+    "answer_grade": 0,
+    "citation_support": [],
+    "reason": "False abstention: p28:c001 exceeded budget=800 after header."
+  },
+  {
+    "query_id": "q12",
+    "answer_grade": 0,
+    "citation_support": [],
+    "reason": "False abstention: TF-IDF failed to retrieve p31:c000 (MAP 1.1)."
+  },
+  {
+    "query_id": "q13",
+    "answer_grade": 0,
+    "citation_support": [],
+    "reason": "False abstention: p34:c000 exceeded budget=800 after header."
+  },
+  {
+    "query_id": "q14",
+    "answer_grade": 0,
+    "citation_support": [],
+    "reason": "False abstention: p37:c001 dropped by budget=800."
+  },
+  {
+    "query_id": "q15",
+    "answer_grade": 2,
+    "citation_support": [true],
+    "reason": "Accurate answer identifying Application Context and Data and Input phases citing p40:c000."
+  },
+  {
+    "query_id": "q21",
+    "citation_support": [],
+    "abstention_correct": true,
+    "reason": "Correctly abstained on unanswerable question about mandatory civil penalties/fines."
+  },
+  {
+    "query_id": "q22",
+    "citation_support": [],
+    "abstention_correct": true,
+    "reason": "Correctly abstained on unanswerable question about registration fee and renewal schedule."
+  }
+]
