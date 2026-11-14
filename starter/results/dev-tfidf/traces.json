@@ -3,9 +3,10 @@
     "query_id": "q01",
     "split": "dev",
     "question": "How does the AI RMF define an AI system?",
-    "strategy": "tfidf",
+    "strategy": "dev-tfidf",
     "top_k": 3,
     "budget_chars": 800,
+    "filter_applied": null,
     "gold": [
       {
         "source_id": "nist-ai-100-1",
@@ -71,7 +72,7 @@
       "nist-ai-100-1:C:p38:c002"
     ],
     "context_chars": 773,
-    "elapsed_ms": 0.44239999988349155,
+    "elapsed_ms": 1.0737999991761171,
     "hit1": false,
     "hit3": false,
     "context_hit": false
@@ -80,9 +81,10 @@
     "query_id": "q02",
     "split": "dev",
     "question": "What are the two factors of risk when considering the negative impact of a potential event?",
-    "strategy": "tfidf",
+    "strategy": "dev-tfidf",
     "top_k": 3,
     "budget_chars": 800,
+    "filter_applied": null,
     "gold": [
       {
         "source_id": "nist-ai-100-1",
@@ -148,7 +150,7 @@
       "nist-ai-100-1:C:p07:c005"
     ],
     "context_chars": 342,
-    "elapsed_ms": 0.4376999995656661,
+    "elapsed_ms": 1.1297999999442254,
     "hit1": true,
     "hit3": true,
     "context_hit": false
@@ -157,9 +159,10 @@
     "query_id": "q03",
     "split": "dev",
     "question": "Does the AI RMF prescribe a specific risk tolerance for organizations?",
-    "strategy": "tfidf",
+    "strategy": "dev-tfidf",
     "top_k": 3,
     "budget_chars": 800,
+    "filter_applied": null,
     "gold": [
       {
         "source_id": "nist-ai-100-1",
@@ -225,7 +228,7 @@
       "nist-ai-100-1:C:p38:c002"
     ],
     "context_chars": 773,
-    "elapsed_ms": 0.387499999760621,
+    "elapsed_ms": 0.9479000000283122,
     "hit1": true,
     "hit3": true,
     "context_hit": false
@@ -234,9 +237,10 @@
     "query_id": "q04",
     "split": "dev",
     "question": "Can using the AI RMF by itself create organizational incentives and accountability structures?",
-    "strategy": "tfidf",
+    "strategy": "dev-tfidf",
     "top_k": 3,
     "budget_chars": 800,
+    "filter_applied": null,
     "gold": [
       {
         "source_id": "nist-ai-100-1",
@@ -302,7 +306,7 @@
       "nist-ai-100-1:C:p14:c000"
     ],
     "context_chars": 729,
-    "elapsed_ms": 0.39740000011079246,
+    "elapsed_ms": 1.6392000006817398,
     "hit1": true,
     "hit3": true,
     "context_hit": true
@@ -311,9 +315,10 @@
     "query_id": "q05",
     "split": "dev",
     "question": "What are the seven characteristics of trustworthy AI systems listed in the AI RMF?",
-    "strategy": "tfidf",
+    "strategy": "dev-tfidf",
     "top_k": 3,
     "budget_chars": 800,
+    "filter_applied": null,
     "gold": [
       {
         "source_id": "nist-ai-100-1",
@@ -379,7 +384,7 @@
       "nist-ai-100-1:C:p17:c000"
     ],
     "context_chars": 781,
-    "elapsed_ms": 0.35089999983028974,
+    "elapsed_ms": 1.5173000001595938,
     "hit1": true,
     "hit3": true,
     "context_hit": true
@@ -388,9 +393,10 @@
     "query_id": "q06",
     "split": "dev",
     "question": "How is robustness or generalizability defined in Section 3 of the AI RMF?",
-    "strategy": "tfidf",
+    "strategy": "dev-tfidf",
     "top_k": 3,
     "budget_chars": 800,
+    "filter_applied": null,
     "gold": [
       {
         "source_id": "nist-ai-100-1",
@@ -456,7 +462,7 @@
       "nist-ai-100-1:C:p19:c001"
     ],
     "context_chars": 712,
-    "elapsed_ms": 0.38330000006681075,
+    "elapsed_ms": 1.1329999997542473,
     "hit1": true,
     "hit3": true,
     "context_hit": true
@@ -465,9 +471,10 @@
     "query_id": "q07",
     "split": "dev",
     "question": "Does having a transparent AI system guarantee that the system is also accurate, secure, or fair?",
-    "strategy": "tfidf",
+    "strategy": "dev-tfidf",
     "top_k": 3,
     "budget_chars": 800,
+    "filter_applied": null,
     "gold": [
       {
         "source_id": "nist-ai-100-1",
@@ -533,7 +540,7 @@
       "nist-ai-100-1:C:p21:c000"
     ],
     "context_chars": 459,
-    "elapsed_ms": 0.40389999958279077,
+    "elapsed_ms": 1.103099999454571,
     "hit1": true,
     "hit3": true,
     "context_hit": true
@@ -542,9 +549,10 @@
     "query_id": "q08",
     "split": "dev",
     "question": "How do transparency, explainability, and interpretability differ in the questions they answer?",
-    "strategy": "tfidf",
+    "strategy": "dev-tfidf",
     "top_k": 3,
     "budget_chars": 800,
+    "filter_applied": null,
     "gold": [
       {
         "source_id": "nist-ai-100-1",
@@ -610,7 +618,7 @@
       "nist-ai-100-1:C:p22:c000"
     ],
     "context_chars": 798,
-    "elapsed_ms": 0.35700000034921686,
+    "elapsed_ms": 0.9743999999045627,
     "hit1": true,
     "hit3": true,
     "context_hit": true
@@ -619,9 +627,12 @@
     "query_id": "q09",
     "split": "dev",
     "question": "In Part 1 (Foundational Information), what are the three expected benefits for users evaluating AI RMF effectiveness?",
-    "strategy": "tfidf",
+    "strategy": "dev-tfidf",
     "top_k": 3,
     "budget_chars": 800,
+    "filter_applied": {
+      "section": "part1_foundational"
+    },
     "gold": [
       {
         "source_id": "nist-ai-100-1",
@@ -665,29 +676,30 @@
         "hit": false
       },
       {
-        "id": "nist-ai-100-1:C:p32:c000",
+        "id": "nist-ai-100-1:C:p10:c000",
         "source_id": "nist-ai-100-1",
         "source": "starter/data/NIST.AI.100-1.pdf",
-        "page": 32,
-        "text": "NIST AI 100-1 AI RMF 1.0 Table 2: Categories and subcategories for the MAP function. (Continued) MAP 2.3: Scientific integrity and TEVV considerations are identified and documented, including those related to experimental design, data collection and selection (e.g., availability, representativeness, suitability), system trustworthiness, and construct validation. MAP 3: AI capabilities, targeted usage, goals, and expected benefits and costs compared with appropriate benchmarks are understood. MAP 3.1: Potential benefits of intended AI system functionality and performance are examined and documented.",
+        "page": 10,
+        "text": "NIST AI 100-1 AI RMF 1.0 Fig. 1. Examples of potential harms related to AI systems. Trustworthy AI systems and their responsible use can mitigate negative risks and contribute to benefits for people, organizations, and ecosystems.",
         "metadata": {
           "year": 2023,
-          "section": "part2_core_profiles",
+          "section": "part1_foundational",
           "language": "en",
           "chunk_index": 0,
           "document_type": "framework"
         },
-        "score": 0.14951186503980324,
+        "score": 0.14157788569185797,
         "strategy": "tfidf",
         "hit": false
       }
     ],
-    "context": "[nist-ai-100-1:C:p09:c000 | starter/data/NIST.AI.100-1.pdf | page 9]\nNIST AI 100-1 AI RMF 1.0 Part 1: Foundational Information 1. Framing Risk AI risk management offers a path to minimize potential negative impacts of AI systems, such as threats to civil liberties and rights, while also providing opportunities to maximize positive impacts. Addressing, documenting, and managing AI risks and potential negative impacts effectively can lead to more trustworthy AI systems.",
+    "context": "[nist-ai-100-1:C:p09:c000 | starter/data/NIST.AI.100-1.pdf | page 9]\nNIST AI 100-1 AI RMF 1.0 Part 1: Foundational Information 1. Framing Risk AI risk management offers a path to minimize potential negative impacts of AI systems, such as threats to civil liberties and rights, while also providing opportunities to maximize positive impacts. Addressing, documenting, and managing AI risks and potential negative impacts effectively can lead to more trustworthy AI systems.\n\n[nist-ai-100-1:C:p10:c000 | starter/data/NIST.AI.100-1.pdf | page 10]\nNIST AI 100-1 AI RMF 1.0 Fig. 1. Examples of potential harms related to AI systems. Trustworthy AI systems and their responsible use can mitigate negative risks and contribute to benefits for people, organizations, and ecosystems.",
     "context_ids": [
-      "nist-ai-100-1:C:p09:c000"
+      "nist-ai-100-1:C:p09:c000",
+      "nist-ai-100-1:C:p10:c000"
     ],
-    "context_chars": 472,
-    "elapsed_ms": 0.44399999978850246,
+    "context_chars": 774,
+    "elapsed_ms": 0.6769000001440872,
     "hit1": false,
     "hit3": false,
     "context_hit": false
@@ -696,9 +708,10 @@
     "query_id": "q10",
     "split": "dev",
     "question": "Which AI RMF Core function is described as cross-cutting and infused throughout AI risk management?",
-    "strategy": "tfidf",
+    "strategy": "dev-tfidf",
     "top_k": 3,
     "budget_chars": 800,
+    "filter_applied": null,
     "gold": [
       {
         "source_id": "nist-ai-100-1",
@@ -764,7 +777,7 @@
       "nist-ai-100-1:C:p27:c000"
     ],
     "context_chars": 513,
-    "elapsed_ms": 0.39939999987836927,
+    "elapsed_ms": 1.077199999599543,
     "hit1": true,
     "hit3": true,
     "context_hit": true
@@ -773,9 +786,10 @@
     "query_id": "q11",
     "split": "dev",
     "question": "What does GOVERN 1.7 require regarding decommissioning AI systems?",
-    "strategy": "tfidf",
+    "strategy": "dev-tfidf",
     "top_k": 3,
     "budget_chars": 800,
+    "filter_applied": null,
     "gold": [
       {
         "source_id": "nist-ai-100-1",
@@ -841,7 +855,7 @@
       "nist-ai-100-1:C:p29:c001"
     ],
     "context_chars": 698,
-    "elapsed_ms": 0.3111999999418913,
+    "elapsed_ms": 0.7538999998359941,
     "hit1": true,
     "hit3": true,
     "context_hit": false
@@ -850,9 +864,12 @@
     "query_id": "q12",
     "split": "dev",
     "question": "In Part 2 (Core and Profiles), what should be documented under MAP 1.1 before deploying an AI system?",
-    "strategy": "tfidf",
+    "strategy": "dev-tfidf",
     "top_k": 3,
     "budget_chars": 800,
+    "filter_applied": {
+      "section": "part2_core_profiles"
+    },
     "gold": [
       {
         "source_id": "nist-ai-100-1",
@@ -918,7 +935,7 @@
       "nist-ai-100-1:C:p25:c000"
     ],
     "context_chars": 570,
-    "elapsed_ms": 0.4629999998542189,
+    "elapsed_ms": 0.5467000000862754,
     "hit1": false,
     "hit3": false,
     "context_hit": false
@@ -927,9 +944,10 @@
     "query_id": "q13",
     "split": "dev",
     "question": "Under MEASURE 1.1, what must be done if certain AI risks or trustworthiness characteristics will not or cannot be measured?",
-    "strategy": "tfidf",
+    "strategy": "dev-tfidf",
     "top_k": 3,
     "budget_chars": 800,
+    "filter_applied": null,
     "gold": [
       {
         "source_id": "nist-ai-100-1",
@@ -995,7 +1013,7 @@
       "nist-ai-100-1:C:p17:c003"
     ],
     "context_chars": 453,
-    "elapsed_ms": 0.42369999982838635,
+    "elapsed_ms": 0.9569999992891098,
     "hit1": true,
     "hit3": true,
     "context_hit": false
@@ -1004,9 +1022,10 @@
     "query_id": "q14",
     "split": "dev",
     "question": "What are the four risk response options listed under MANAGE 1.3?",
-    "strategy": "tfidf",
+    "strategy": "dev-tfidf",
     "top_k": 3,
     "budget_chars": 800,
+    "filter_applied": null,
     "gold": [
       {
         "source_id": "nist-ai-100-1",
@@ -1072,7 +1091,7 @@
       "nist-ai-100-1:C:p38:c000"
     ],
     "context_chars": 778,
-    "elapsed_ms": 0.34719999985100003,
+    "elapsed_ms": 0.7280999998329207,
     "hit1": true,
     "hit3": true,
     "context_hit": false
@@ -1081,9 +1100,12 @@
     "query_id": "q15",
     "split": "dev",
     "question": "In the Appendix, during which phases of the AI lifecycle are AI Design tasks performed?",
-    "strategy": "tfidf",
+    "strategy": "dev-tfidf",
     "top_k": 3,
     "budget_chars": 800,
+    "filter_applied": {
+      "section": "appendix"
+    },
     "gold": [
       {
         "source_id": "nist-ai-100-1",
@@ -1127,19 +1149,19 @@
         "hit": false
       },
       {
-        "id": "nist-ai-100-1:C:p14:c003",
+        "id": "nist-ai-100-1:C:p40:c003",
         "source_id": "nist-ai-100-1",
         "source": "starter/data/NIST.AI.100-1.pdf",
-        "page": 14,
-        "text": "AI dimensions displayed in Figure 2 are the Application Context, Data and Input, AI Model, and Task and Output. AI actors involved in these dimensions who perform or manage the design, development, deployment, evaluation, and use of AI systems and drive AI risk management efforts are the primary AI RMF audience. Representative AI actors across the lifecycle dimensions are listed in Figure 3 and described in detail in Appendix A. Within the AI RMF, all AI actors work together to manage risks and achieve the goals of trustworthy and responsible AI. AI actors with TEVV-specific expertise are integrated throughout the AI lifecycle and are especially likely to benefit from the Framework.",
+        "page": 40,
+        "text": "AI Deployment tasks are performed during the Task and Output phase of the lifecycle in Figure 2. AI Deployment actors are responsible for contextual decisions relating to how the AI system is used to assure deployment of the system into production. Related tasks include piloting the system, checking compatibility with legacy systems, ensuring regulatory compliance, managing organizational change, and evaluating user experience. AI actors in this category include system integrators, software developers, end users, operators and practitioners, evaluators, and domain experts with expertise in human factors, socio-cultural analysis, and governance.",
         "metadata": {
           "year": 2023,
-          "section": "part1_foundational",
+          "section": "appendix",
           "language": "en",
           "chunk_index": 3,
           "document_type": "framework"
         },
-        "score": 0.24982115408114666,
+        "score": 0.24124107417494342,
         "strategy": "tfidf",
         "hit": false
       }
@@ -1149,7 +1171,7 @@
       "nist-ai-100-1:C:p40:c000"
     ],
     "context_chars": 725,
-    "elapsed_ms": 0.5046000001129869,
+    "elapsed_ms": 0.27380000028642826,
     "hit1": true,
     "hit3": true,
     "context_hit": true

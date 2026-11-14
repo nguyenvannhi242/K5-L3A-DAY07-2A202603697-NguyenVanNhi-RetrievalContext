@@ -24,15 +24,24 @@
 
 | Cấu hình | Phương pháp, top-k, filter, rerank, context budget | Giả thuyết / thay đổi | Split | Hit@1 | Evidence Hit@3 | Context Evidence Rate | Thời gian / chi phí |
 |---|---|---|---|---|---|---|---|
-| Baseline | Lexical TF-IDF (`starter/baseline.py`), `top_k=3`, không filter, không rerank, `budget=800` chars | Điểm chuẩn lexical offline trên bộ dữ liệu Day 6 | dev | 12/15 (80.0%) | 12/15 (80.0%) | 7/15 (46.7%) | 0.40 ms/query (index 0.010s) / \$0.00 |
-| Phương pháp 2 | | | dev | | | | |
-| Phương pháp 3 | | | dev | | | | |
-| Cải thiện 1 | | | dev | | | | |
-| Cải thiện 2 | | | dev | | | | |
+| Baseline (`dev-tfidf`) | Lexical TF-IDF (`TfidfRetriever`), `top_k=3`, không filter, không rerank, `budget=800` chars | Điểm chuẩn lexical offline trên bộ dữ liệu Day 6 | dev | 12/15 (80.0%) | 12/15 (80.0%) | 7/15 (46.7%) | 0.97 ms/query (index 0.009s) / \$0.00 |
+| Phương pháp 2 (`dev-dense`) | Dense pgvector Day 6 (`BAAI/bge-small-en-v1.5`), `top_k=3`, `auto_filter` (`section`), không rerank, `budget=800` chars | Truy xuất ngữ nghĩa giúp bắt paraphrase tốt hơn khớp từ khóa thuần túy | dev | 11/15 (73.3%) | 12/15 (80.0%) | 8/15 (53.3%) | 61.10 ms/query (load 12.689s) / \$0.00 |
+| Phương pháp 3a (`dev-bm25`) | Okapi BM25 (giữ mã `1.1`, lọc stopwords), `top_k=3`, `auto_filter`, `budget=800` chars | Giữ nguyên mã mục `MAP 1.1`/`MEASURE 1.1` và bỏ stopwords giúp giảm nhiễu từ chức năng | dev | 12/15 (80.0%) | 13/15 (86.7%) | 7/15 (46.7%) | 0.57 ms/query (index 0.008s) / \$0.00 |
+| Phương pháp 3b (`dev-hybrid-b800`) | Hybrid RRF (Dense + BM25, `rrf_k=20`), `top_k=3`, `auto_filter`, `budget=800` chars | Kết hợp ngữ nghĩa Dense và khớp mã/từ khóa BM25 để nâng Hit@3 | dev | 12/15 (80.0%) | 14/15 (93.3%) | 7/15 (46.7%) | 46.89 ms/query (load 12.697s) / \$0.00 |
+| Cải thiện 1 (`dev-imp1-hybrid-b2400`) | Hybrid RRF, `top_k=3`, `auto_filter`, mở rộng `budget=2400` chars | Tăng context budget từ 800 lên 2400 để không bị rớt chunk dài (>730 chars) và giữ đủ top-3 | dev | 12/15 (80.0%) | 14/15 (93.3%) | 14/15 (93.3%) | 71.69 ms/query / \$0.00 |
+| Cải thiện 2 (`dev-imp2-hybrid-neighbor-b2400`) | Hybrid RRF + Lead-in Neighbor Expansion, `top_k=3`, `auto_filter`, `budget=2400` chars | Kéo chunk liền kề khi chunk dẫn đầu kết thúc bằng `:` hoặc chunk sau bắt đầu bằng bullet `•` | dev | 12/15 (80.0%) | 15/15 (100.0%) | 15/15 (100.0%) | 67.24 ms/query / \$0.00 |
 | Cấu hình đã chọn | | | test | | | | |
 | Baseline | | | test | | | | |
 
 Một cấu hình có thể đồng thời là phương pháp mới và cải thiện; giải thích rõ. Báo `n/N` và tỷ lệ, ghi đơn vị thời gian/chi phí, so sánh test sau khi chốt. Nêu hai lỗi dev, nguyên nhân, cách thử và lý do chọn cấu hình:
+
+- **Lỗi dev #1 — Tràn `Context Budget = 800` gây mất bằng chứng đã tìm thấy (`q02`, `q03`, `q11`, `q13`, `q14`)**:
+  - *Nguyên nhân*: Các chunk của chiến lược C (`by_paragraph`, `max_size=800`) dài tới ~799 ký tự; khi `pack_context(..., budget=800)` cộng thêm chuỗi header `[id | source | page N]\n` (~60–70 ký tự), tổng độ dài chunk top-1 vượt quá 800 ký tự nên bị loại khỏi context, khiến hàm đóng gói nhảy sang lấy một chunk ngắn hơn nhưng không chứa bằng chứng ở hạng thấp hơn (như `q02` lấy `p07:c005` dài 342 chars thay vì `p09:c001`). Vì vậy trên `dev-hybrid-b800`, `Hit@3` đạt `14/15 (93.3%)` nhưng `Context Evidence Rate` chỉ còn `7/15 (46.7%)`.
+  - *Giả thuyết & kết quả*: Khi tăng `budget` từ `800` lên `2400` ký tự (`dev-imp1-hybrid-b2400`, đủ chứa trọn cả 3 chunk top-3), `Context Evidence Rate` tăng từ `7/15 (46.7%)` lên `14/15 (93.3%)`.
+- **Lỗi dev #2 — Tách câu dẫn và danh sách bullet qua ranh giới chunk (`q09`, trang 24) và lệch từ khóa chuyên môn/paraphrase (`q01`, `q12`, `q13`)**:
+  - *Nguyên nhân*: Ở `q01` (*"define an AI system"* vs văn bản *"refers to an AI system as..."*), TF-IDF và BM25 bị trượt vì khác từ vựng (`define` vs `refers to`); ngược lại ở `q13` (*"MEASURE 1.1"*), Dense embedding bị nhiễu giữa các mục gần nhau trong bảng, còn BM25 bắt chính xác mã `MEASURE 1.1`. Riêng `q09` có câu dẫn `"Framework users are expected to benefit from:"` nằm ở `p24:c000`, còn toàn bộ danh sách bullet đáp án nằm ở chunk kế tiếp `p24:c001`, nên cả Dense và BM25 đơn lẻ đều chấm điểm cao cho `p24:c000` và bỏ sót `p24:c001` khỏi top-3.
+  - *Giả thuyết & kết quả*: Kết hợp Dense + BM25 bằng RRF giải quyết triệt để `q01`, `q12`, `q13` (`Hit@3` đạt `14/15`). Bật thêm cơ chế Lead-in Neighbor Expansion (`dev-imp2-hybrid-neighbor-b2400`) kéo được `p24:c001` ngay sau `p24:c000`, giúp `Evidence Hit@3` và `Context Evidence Rate` trên `dev` cùng đạt `15/15 (100.0%)`.
+- **Chốt cấu hình trên `dev` (trước khi chạy `test`)**: Chọn **Cấu hình Cải thiện 2 (`HybridRRFRetriever` với `enable_neighbor_expansion=True`, `auto_filter=True`, `top_k=3`, `budget=2400`)** vì đạt đồng thời `Hit@3 = 100%` và `Context Evidence Rate = 100%` trên `dev` với độ trễ trung vị `67.24 ms/query` và chi phí embedding/vector store `\$0.00` (chạy cục bộ hoàn toàn).
 
 ## Agent và đánh giá
 
